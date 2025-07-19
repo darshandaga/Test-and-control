@@ -23,21 +23,11 @@ Test whether using local state phone numbers increases pickup rates compared to 
 #### ✅ **Correct Steps:**
 1. **Campaign Definition** - Properly defined test vs control
 2. **Stratification** - Created strata based on key variables
+3. **Propensity Score Calculation**: Use covariates (age, gender, insurance, etc.) as X variables to predict treatment assignment probability
 4. **Propensity Score Matching** - Used for creating balanced groups
+5. **Campaign Deployment**: Campaign sent to BOTH groups (test gets local numbers, control gets toll-free)
 6. **Results Collection** - Measured pickup rates
-
-#### ❌ **Corrected Steps:**
-3. **Propensity Score Calculation**: 
-   - **Your approach**: Use test/control as Y variable
-   - **Correct approach**: Use covariates (age, gender, insurance, etc.) as X variables to predict treatment assignment probability
-
-5. **Campaign Deployment**:
-   - **Your approach**: Campaign sent only to control group
-   - **Correct approach**: Campaign sent to BOTH groups (test gets local numbers, control gets toll-free)
-
-7. **Statistical Analysis**:
-   - **Your approach**: T-test only
-   - **Correct approach**: Comprehensive analysis including t-test, chi-square, effect size, confidence intervals
+7. **Statistical Analysis**: Comprehensive analysis including t-test, chi-square, effect size, confidence intervals
 
 ## Implementation Details
 
